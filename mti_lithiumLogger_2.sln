@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31105.61
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "mti_lithiumLogger_2", "mti_lithiumLogger_2.csproj", "{886F52F3-859E-4B02-9BF1-DFA2A0F73189}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{886F52F3-859E-4B02-9BF1-DFA2A0F73189}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{886F52F3-859E-4B02-9BF1-DFA2A0F73189}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{886F52F3-859E-4B02-9BF1-DFA2A0F73189}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{886F52F3-859E-4B02-9BF1-DFA2A0F73189}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {5186115A-B281-491F-AAC6-47DB5A31E16C}
+	EndGlobalSection
+EndGlobal

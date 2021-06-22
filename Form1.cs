@@ -14,6 +14,7 @@ namespace mti_lithiumLogger_2
     public partial class Form1 : Form
     {
         SerialPort serialPort;
+        Timer timer = new Timer();
 
         public Form1()
         {
@@ -25,7 +26,6 @@ namespace mti_lithiumLogger_2
             serialPort.DtrEnable = true;
             serialPort.Open();
 
-            Timer timer = new Timer();
             timer.Interval = 1000;
             timer.Tick += new System.EventHandler(timer_Tick);
             timer.Start();
@@ -34,8 +34,7 @@ namespace mti_lithiumLogger_2
         private void timer_Tick(object sender, EventArgs e)
         {
             String dataFromArduino = serialPort.ReadLine();
-            int dard=0;
-
+            int dard;
 
             if (int.TryParse(dataFromArduino, out dard))
             {
@@ -57,7 +56,6 @@ namespace mti_lithiumLogger_2
 
 
         }
-
 
         public static string DecimalToHexadecimal(int dec)
         {

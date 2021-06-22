@@ -57,8 +57,8 @@ namespace mti_lithiumLogger_2
                 if (dard == 0x01014359)
                 {
                     string result = DecimalToHexadecimal(dard);
-                    var textBox_arus = new Form1(new TextBox);
-                    textBox_arus.tb_arus = result;
+                    var textBox_arus = new Form1();
+                    textBox_arus.tb_arus.Text = result;
                 }
             }
         }

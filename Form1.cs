@@ -1,19 +1,15 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 using System.Windows.Forms;
 using System.IO.Ports;
+using System.Threading;
 
 namespace mti_lithiumLogger_2
 {
     public partial class Form1 : Form
     {
         SerialPort serialPort;
+        System.Windows.Forms.Timer timer = new System.Windows.Forms.Timer();
 
         public Form1()
         {
@@ -25,42 +21,45 @@ namespace mti_lithiumLogger_2
             serialPort.DtrEnable = true;
             serialPort.Open();
 
-            Timer timer = new Timer();
+            
             timer.Interval = 1000;
             timer.Tick += new System.EventHandler(timer_Tick);
             timer.Start();
         }
 
-        private void timer_Tick(object sender, EventArgs e)
+        public void timer_Tick(object sender, EventArgs e)
         {
             String dataFromArduino = serialPort.ReadLine();
             int dard=0;
 
-            arus(dataFromArduino, dard);
+            Thread thread_arus = new Thread(() => arus(dataFromArduino, dard));
+            thread_arus.Start();
 
             if (int.TryParse(dataFromArduino, out dard))
             {
                 if (dard == 0x0102671)
-                {
+                {   
                     string result = DecimalToHexadecimal(dard);
                     tb_temp.Text = result;
                 }
             }
-
-
         }
 
-        static void arus(string dataFromArduino, int dard)
+        public void arus(string dataFromArduino, int dard)
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
                 if (dard == 0x01014359)
                 {
                     string result = DecimalToHexadecimal(dard);
-                    var textBox_arus = new Form1();
-                    textBox_arus.tb_arus.Text = result;
+                    this.Invoke(new MethodInvoker(delegate ()
+                    {
+                        tb_arus.Text = result;
+                    }));
+                    Thread.Sleep(1000);
                 }
             }
+            
         }
 
         public static string DecimalToHexadecimal(int dec)

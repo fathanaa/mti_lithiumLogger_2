@@ -102,7 +102,7 @@ namespace mti_lithiumLogger_2
             // tb_v03
             // 
             this.tb_v03.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tb_v03.Location = new System.Drawing.Point(534, 140);
+            this.tb_v03.Location = new System.Drawing.Point(523, 140);
             this.tb_v03.Name = "tb_v03";
             this.tb_v03.Size = new System.Drawing.Size(100, 29);
             this.tb_v03.TabIndex = 5;
@@ -120,7 +120,7 @@ namespace mti_lithiumLogger_2
             // tb_v01
             // 
             this.tb_v01.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tb_v01.Location = new System.Drawing.Point(202, 140);
+            this.tb_v01.Location = new System.Drawing.Point(191, 140);
             this.tb_v01.Name = "tb_v01";
             this.tb_v01.Size = new System.Drawing.Size(100, 29);
             this.tb_v01.TabIndex = 7;
@@ -138,7 +138,7 @@ namespace mti_lithiumLogger_2
             // tb_v02
             // 
             this.tb_v02.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tb_v02.Location = new System.Drawing.Point(368, 140);
+            this.tb_v02.Location = new System.Drawing.Point(357, 140);
             this.tb_v02.Name = "tb_v02";
             this.tb_v02.Size = new System.Drawing.Size(100, 29);
             this.tb_v02.TabIndex = 9;
@@ -156,7 +156,7 @@ namespace mti_lithiumLogger_2
             // tb_v05
             // 
             this.tb_v05.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tb_v05.Location = new System.Drawing.Point(368, 184);
+            this.tb_v05.Location = new System.Drawing.Point(357, 184);
             this.tb_v05.Name = "tb_v05";
             this.tb_v05.Size = new System.Drawing.Size(100, 29);
             this.tb_v05.TabIndex = 15;
@@ -174,7 +174,7 @@ namespace mti_lithiumLogger_2
             // tb_v04
             // 
             this.tb_v04.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tb_v04.Location = new System.Drawing.Point(202, 184);
+            this.tb_v04.Location = new System.Drawing.Point(191, 184);
             this.tb_v04.Name = "tb_v04";
             this.tb_v04.Size = new System.Drawing.Size(100, 29);
             this.tb_v04.TabIndex = 13;
@@ -192,7 +192,7 @@ namespace mti_lithiumLogger_2
             // tb_v06
             // 
             this.tb_v06.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tb_v06.Location = new System.Drawing.Point(534, 184);
+            this.tb_v06.Location = new System.Drawing.Point(523, 184);
             this.tb_v06.Name = "tb_v06";
             this.tb_v06.Size = new System.Drawing.Size(100, 29);
             this.tb_v06.TabIndex = 11;
@@ -210,7 +210,7 @@ namespace mti_lithiumLogger_2
             // tb_v08
             // 
             this.tb_v08.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tb_v08.Location = new System.Drawing.Point(368, 226);
+            this.tb_v08.Location = new System.Drawing.Point(357, 226);
             this.tb_v08.Name = "tb_v08";
             this.tb_v08.Size = new System.Drawing.Size(100, 29);
             this.tb_v08.TabIndex = 21;
@@ -228,7 +228,7 @@ namespace mti_lithiumLogger_2
             // tb_v07
             // 
             this.tb_v07.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tb_v07.Location = new System.Drawing.Point(202, 226);
+            this.tb_v07.Location = new System.Drawing.Point(191, 226);
             this.tb_v07.Name = "tb_v07";
             this.tb_v07.Size = new System.Drawing.Size(100, 29);
             this.tb_v07.TabIndex = 19;
@@ -246,7 +246,7 @@ namespace mti_lithiumLogger_2
             // tb_v09
             // 
             this.tb_v09.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tb_v09.Location = new System.Drawing.Point(534, 226);
+            this.tb_v09.Location = new System.Drawing.Point(523, 226);
             this.tb_v09.Name = "tb_v09";
             this.tb_v09.Size = new System.Drawing.Size(100, 29);
             this.tb_v09.TabIndex = 17;
@@ -264,7 +264,7 @@ namespace mti_lithiumLogger_2
             // tb_v11
             // 
             this.tb_v11.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tb_v11.Location = new System.Drawing.Point(368, 265);
+            this.tb_v11.Location = new System.Drawing.Point(357, 265);
             this.tb_v11.Name = "tb_v11";
             this.tb_v11.Size = new System.Drawing.Size(100, 29);
             this.tb_v11.TabIndex = 27;
@@ -282,7 +282,7 @@ namespace mti_lithiumLogger_2
             // tb_v10
             // 
             this.tb_v10.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tb_v10.Location = new System.Drawing.Point(202, 265);
+            this.tb_v10.Location = new System.Drawing.Point(191, 265);
             this.tb_v10.Name = "tb_v10";
             this.tb_v10.Size = new System.Drawing.Size(100, 29);
             this.tb_v10.TabIndex = 25;
@@ -300,7 +300,7 @@ namespace mti_lithiumLogger_2
             // tb_v12
             // 
             this.tb_v12.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tb_v12.Location = new System.Drawing.Point(534, 265);
+            this.tb_v12.Location = new System.Drawing.Point(523, 265);
             this.tb_v12.Name = "tb_v12";
             this.tb_v12.Size = new System.Drawing.Size(100, 29);
             this.tb_v12.TabIndex = 23;
@@ -318,7 +318,7 @@ namespace mti_lithiumLogger_2
             // tb_v14
             // 
             this.tb_v14.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tb_v14.Location = new System.Drawing.Point(368, 303);
+            this.tb_v14.Location = new System.Drawing.Point(357, 303);
             this.tb_v14.Name = "tb_v14";
             this.tb_v14.Size = new System.Drawing.Size(100, 29);
             this.tb_v14.TabIndex = 31;
@@ -336,7 +336,7 @@ namespace mti_lithiumLogger_2
             // tb_v13
             // 
             this.tb_v13.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tb_v13.Location = new System.Drawing.Point(202, 303);
+            this.tb_v13.Location = new System.Drawing.Point(191, 303);
             this.tb_v13.Name = "tb_v13";
             this.tb_v13.Size = new System.Drawing.Size(100, 29);
             this.tb_v13.TabIndex = 29;

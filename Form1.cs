@@ -32,17 +32,14 @@ namespace mti_lithiumLogger_2
             String dataFromArduino = serialPort.ReadLine();
             int dard=0;
 
-            Thread thread_arus = new Thread(() => arus(dataFromArduino, dard));
+            Thread thread_arus = new Thread(new ThreadStart(() => arus(dataFromArduino, dard)));
             thread_arus.Start();
 
-            if (int.TryParse(dataFromArduino, out dard))
-            {
-                if (dard == 0x0102671)
-                {   
-                    string result = DecimalToHexadecimal(dard);
-                    tb_temp.Text = result;
-                }
-            }
+            Thread thread_temp = new Thread(new ThreadStart(() => temp(dataFromArduino, dard)));
+            thread_temp.Start();
+
+            Thread thread_v01 = new Thread(new ThreadStart(() => v01(dataFromArduino, dard)));
+            thread_v01.Start();
         }
 
         public void arus(string dataFromArduino, int dard)
@@ -51,15 +48,58 @@ namespace mti_lithiumLogger_2
             {
                 if (dard == 0x01014359)
                 {
-                    string result = DecimalToHexadecimal(dard);
-                    this.Invoke(new MethodInvoker(delegate ()
+                    while (true)
                     {
-                        tb_arus.Text = result;
-                    }));
-                    Thread.Sleep(1000);
+                        dard += 1;
+                        string result = DecimalToHexadecimal(dard);
+                        this.Invoke(new MethodInvoker(delegate ()
+                        {
+                            tb_arus.Text = result;
+                        }));
+                        Thread.Sleep(1000);
+                    }
+                }
+            }    
+        }
+
+        public void temp(string dataFromArduino, int dard)
+        {
+            if (int.TryParse(dataFromArduino, out dard))
+            {
+                if (dard == 0x0102671)
+                {
+                    while (true)
+                    {
+                        dard += 1;
+                        string result = DecimalToHexadecimal(dard);
+                        this.Invoke(new MethodInvoker(delegate ()
+                        {
+                            tb_temp.Text = result;
+                        }));
+                        Thread.Sleep(1000);
+                    }
                 }
             }
-            
+        }
+
+        public void v01(string dataFromArduino, int dard)
+        {
+            if (int.TryParse(dataFromArduino, out dard))
+            {
+                if (dard == 0x01032703)
+                {
+                    while (true)
+                    {
+                        dard += 1;
+                        string result = DecimalToHexadecimal(dard);
+                        this.Invoke(new MethodInvoker(delegate ()
+                        {
+                            tb_v01.Text = result;
+                        }));
+                        Thread.Sleep(1000);
+                    }
+                }
+            }
         }
 
         public static string DecimalToHexadecimal(int dec)

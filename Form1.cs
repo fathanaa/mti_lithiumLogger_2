@@ -16,13 +16,13 @@ namespace mti_lithiumLogger_2
             InitializeComponent();
 
             serialPort = new SerialPort();
-            serialPort.PortName = "COM3";
+            serialPort.PortName = "COM4";
             serialPort.BaudRate = 9600;
             serialPort.DtrEnable = true;
             serialPort.Open();
 
             
-            timer.Interval = 1000;
+            // timer.Interval = 1000;
             timer.Tick += new System.EventHandler(timer_Tick);
             timer.Start();
         }

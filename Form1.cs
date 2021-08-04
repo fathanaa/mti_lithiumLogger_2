@@ -87,7 +87,7 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                if (dard == 0x01164100)
+                if (dard.ToString().Contains("0x"+identifyID(dard)))
                 {
                     while (true)
                     {
@@ -107,11 +107,12 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                if (dard == 0x01156229)
+                int valid = 168;
+                if (dataFromArduino.Contains(valid.ToString()))
                 {
                     while (true)
                     {
-                        dard += 1;
+
                         string result = DecimalToHexadecimal(dard);
                         this.Invoke(new MethodInvoker(delegate ()
                         {
@@ -127,11 +128,10 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                if (dard == 0x01014359)
+                if (dard == 0x1014359)
                 {
                     while (true)
                     {
-                        dard += 1;
                         string result = DecimalToHexadecimal(dard);
                         this.Invoke(new MethodInvoker(delegate ()
                         {
@@ -147,7 +147,8 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                if (dard == 0x0102671)
+                int valid = 0x102;
+                if (dard.ToString().Contains(valid.ToString()))
                 {
                     while (true)
                     {
@@ -167,7 +168,8 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                if (dard == 0x01032703)
+                int valid = 0x103;
+                if (dard.ToString().Contains(valid.ToString()))
                 {
                     while (true)
                     {
@@ -187,7 +189,8 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                if (dard == 0x01042185)
+                int valid = 0x104;
+                if (dard.ToString().Contains(valid.ToString()))
                 {
                     while (true)
                     {
@@ -195,7 +198,7 @@ namespace mti_lithiumLogger_2
                         string result = DecimalToHexadecimal(dard);
                         this.Invoke(new MethodInvoker(delegate ()
                         {
-                            tb_v04.Text = result;
+                            tb_v03.Text = result;
                         }));
                         Thread.Sleep(1000);
                     }
@@ -207,7 +210,8 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                if (dard == 0x01053395)
+                int valid = 0x105;
+                if (dard.ToString().Contains(valid.ToString()))
                 {
                     while (true)
                     {
@@ -227,7 +231,8 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                if (dard == 0x01062371)
+                int valid = 0x106;
+                if (dard.ToString().Contains(valid.ToString()))
                 {
                     while (true)
                     {
@@ -247,7 +252,8 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                if (dard == 0x01074064)
+                int valid = 0x107;
+                if (dard.ToString().Contains(valid.ToString()))
                 {
                     while (true)
                     {
@@ -267,7 +273,8 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                if (dard == 0x01083165)
+                int valid = 0x108;
+                if (dard.ToString().Contains(valid.ToString()))
                 {
                     while (true)
                     {
@@ -287,7 +294,8 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                if (dard == 0x01093895)
+                int valid = 0x109;
+                if (dard.ToString().Contains(valid.ToString()))
                 {
                     while (true)
                     {
@@ -307,7 +315,8 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                if (dard == 0x01102628)
+                int valid = 0x110;
+                if (dard.ToString().Contains(valid.ToString()))
                 {
                     while (true)
                     {
@@ -327,7 +336,8 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                if (dard == 0x01112610)
+                int valid = 0x111;
+                if (dard.ToString().Contains(valid.ToString()))
                 {
                     while (true)
                     {
@@ -347,7 +357,8 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                if (dard == 0x01122890)
+                int valid = 0x112;
+                if (dard.ToString().Contains(valid.ToString()))
                 {
                     while (true)
                     {
@@ -367,7 +378,8 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                if (dard == 0x01131865)
+                int valid = 0x113;
+                if (dard.ToString().Contains(valid.ToString()))
                 {
                     while (true)
                     {
@@ -387,7 +399,8 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                if (dard == 0x01144275)
+                int valid = 0x114;
+                if (dard.ToString().Contains(valid.ToString()))
                 {
                     while (true)
                     {
@@ -402,10 +415,6 @@ namespace mti_lithiumLogger_2
                 }
             }
         }
-
-
-
-
         
 
         public static string DecimalToHexadecimal(int dec)
@@ -418,6 +427,8 @@ namespace mti_lithiumLogger_2
             while (dec > 0)
             {
                 hex = dec % 16;
+                if (dec != dec % 4096)
+                {
                     if (hex < 10)
                     {
                         hexStr = hexStr.Insert(0, Convert.ToChar(hex + 48).ToString());
@@ -426,9 +437,38 @@ namespace mti_lithiumLogger_2
                     {
                         hexStr = hexStr.Insert(0, Convert.ToChar(hex + 55).ToString());
                     }
+                }
                 dec /= 16;
             }
             return hexStr;
         }
+
+        public static string identifyID(int dec)
+        {
+            if (dec < 1) return "0";
+
+            int hex = dec;
+            string hexStr = string.Empty;
+
+            while (dec > 0)
+            {
+                hex = dec % 16;
+                if (dec == dec % 4096)
+                {
+                    if (hex < 10)
+                    {
+                        hexStr = hexStr.Insert(0, Convert.ToChar(hex + 48).ToString());
+                    }
+                    else
+                    {
+                        hexStr = hexStr.Insert(0, Convert.ToChar(hex + 55).ToString());
+                    }
+                }
+                dec /= 16;
+            }
+            return hexStr;
+        }
+
+
     }
 }

@@ -22,7 +22,7 @@ namespace mti_lithiumLogger_2
             serialPort.Open();
 
             
-            // timer.Interval = 1000;
+           // timer.Interval = 1000;
             timer.Tick += new System.EventHandler(timer_Tick);
             timer.Start();
         }
@@ -31,6 +31,7 @@ namespace mti_lithiumLogger_2
         {
             String dataFromArduino = serialPort.ReadLine();
             int dard=0;
+            
 
             Thread thread_arus = new Thread(new ThreadStart(() => arus(dataFromArduino, dard)));
             thread_arus.Start();
@@ -87,18 +88,16 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                if (dard.ToString().Contains("0x"+identifyID(dard)))
+                int valid = 5214;
+                if (dataFromArduino.Contains(valid.ToString()))
                 {
-                    while (true)
-                    {
-                        dard += 1;
                         string result = DecimalToHexadecimal(dard);
                         this.Invoke(new MethodInvoker(delegate ()
                         {
                             tb_arus.Text = result;
                         }));
-                        Thread.Sleep(1000);
-                    }
+                        Thread.Sleep(10);
+                    
                 }
             }
         }
@@ -107,19 +106,17 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                int valid = 168;
-                if (dataFromArduino.Contains(valid.ToString()))
+                int valid = 5551;
+                if (dard.ToString().Contains(valid.ToString()))
                 {
-                    while (true)
-                    {
 
                         string result = DecimalToHexadecimal(dard);
                         this.Invoke(new MethodInvoker(delegate ()
                         {
                             tb_temp.Text = result;
                         }));
-                        Thread.Sleep(1000);
-                    }
+                        Thread.Sleep(10);
+                    
                 }
             }
         }
@@ -128,17 +125,16 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                if (dard == 0x1014359)
+                int valid = 2852;
+                if (dard.ToString().Contains(valid.ToString()))
                 {
-                    while (true)
-                    {
                         string result = DecimalToHexadecimal(dard);
                         this.Invoke(new MethodInvoker(delegate ()
                         {
                             tb_v01.Text = result;
                         }));
-                        Thread.Sleep(1000);
-                    }
+                        Thread.Sleep(10);
+                    
                 }
             }
         }
@@ -147,19 +143,18 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                int valid = 0x102;
+                int valid = 3021;
                 if (dard.ToString().Contains(valid.ToString()))
                 {
-                    while (true)
-                    {
-                        dard += 1;
+
+                        
                         string result = DecimalToHexadecimal(dard);
                         this.Invoke(new MethodInvoker(delegate ()
                         {
                             tb_v02.Text = result;
                         }));
-                        Thread.Sleep(1000);
-                    }
+                        Thread.Sleep(10);
+                    
                 }
             }
         }
@@ -168,19 +163,18 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                int valid = 0x103;
+                int valid = 3189;
                 if (dard.ToString().Contains(valid.ToString()))
                 {
-                    while (true)
-                    {
-                        dard += 1;
+
+                        
                         string result = DecimalToHexadecimal(dard);
                         this.Invoke(new MethodInvoker(delegate ()
                         {
                             tb_v03.Text = result;
                         }));
-                        Thread.Sleep(1000);
-                    }
+                        Thread.Sleep(10);
+                    
                 }
             }
         }
@@ -189,19 +183,17 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                int valid = 0x104;
+                int valid = 3358;
                 if (dard.ToString().Contains(valid.ToString()))
                 {
-                    while (true)
-                    {
-                        dard += 1;
+  
                         string result = DecimalToHexadecimal(dard);
                         this.Invoke(new MethodInvoker(delegate ()
                         {
-                            tb_v03.Text = result;
+                            tb_v04.Text = result;
                         }));
-                        Thread.Sleep(1000);
-                    }
+                        Thread.Sleep(10);
+                    
                 }
             }
         }
@@ -210,19 +202,18 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                int valid = 0x105;
+                int valid = 3526;
                 if (dard.ToString().Contains(valid.ToString()))
                 {
-                    while (true)
-                    {
-                        dard += 1;
+
+                        
                         string result = DecimalToHexadecimal(dard);
                         this.Invoke(new MethodInvoker(delegate ()
                         {
                             tb_v05.Text = result;
                         }));
-                        Thread.Sleep(1000);
-                    }
+                        Thread.Sleep(10);
+                    
                 }
             }
         }
@@ -231,19 +222,18 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                int valid = 0x106;
+                int valid = 3695;
                 if (dard.ToString().Contains(valid.ToString()))
                 {
-                    while (true)
-                    {
-                        dard += 1;
+
+                        
                         string result = DecimalToHexadecimal(dard);
                         this.Invoke(new MethodInvoker(delegate ()
                         {
                             tb_v06.Text = result;
                         }));
-                        Thread.Sleep(1000);
-                    }
+                        Thread.Sleep(10);
+                    
                 }
             }
         }
@@ -252,19 +242,17 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                int valid = 0x107;
+                int valid = 3863;
                 if (dard.ToString().Contains(valid.ToString()))
                 {
-                    while (true)
-                    {
-                        dard += 1;
+  
                         string result = DecimalToHexadecimal(dard);
                         this.Invoke(new MethodInvoker(delegate ()
                         {
                             tb_v07.Text = result;
                         }));
-                        Thread.Sleep(1000);
-                    }
+                        Thread.Sleep(10);
+                    
                 }
             }
         }
@@ -273,19 +261,18 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                int valid = 0x108;
+                int valid = 4031;
                 if (dard.ToString().Contains(valid.ToString()))
                 {
-                    while (true)
-                    {
-                        dard += 1;
+ 
+                        
                         string result = DecimalToHexadecimal(dard);
                         this.Invoke(new MethodInvoker(delegate ()
                         {
                             tb_v08.Text = result;
                         }));
-                        Thread.Sleep(1000);
-                    }
+                        Thread.Sleep(10);
+                    
                 }
             }
         }
@@ -294,19 +281,18 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                int valid = 0x109;
+                int valid = 4200;
                 if (dard.ToString().Contains(valid.ToString()))
                 {
-                    while (true)
-                    {
-                        dard += 1;
+
+                        
                         string result = DecimalToHexadecimal(dard);
                         this.Invoke(new MethodInvoker(delegate ()
                         {
                             tb_v09.Text = result;
                         }));
-                        Thread.Sleep(1000);
-                    }
+                        Thread.Sleep(10);
+                    
                 }
             }
         }
@@ -315,19 +301,17 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                int valid = 0x110;
+                int valid = 4372;
                 if (dard.ToString().Contains(valid.ToString()))
                 {
-                    while (true)
-                    {
-                        dard += 1;
+  
                         string result = DecimalToHexadecimal(dard);
                         this.Invoke(new MethodInvoker(delegate ()
                         {
                             tb_v10.Text = result;
                         }));
-                        Thread.Sleep(1000);
-                    }
+                        Thread.Sleep(10);
+                    
                 }
             }
         }
@@ -336,19 +320,17 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                int valid = 0x111;
+                int valid = 4541;
                 if (dard.ToString().Contains(valid.ToString()))
                 {
-                    while (true)
-                    {
-                        dard += 1;
+                        
                         string result = DecimalToHexadecimal(dard);
                         this.Invoke(new MethodInvoker(delegate ()
                         {
                             tb_v11.Text = result;
                         }));
-                        Thread.Sleep(1000);
-                    }
+                        Thread.Sleep(10);
+                    
                 }
             }
         }
@@ -357,19 +339,17 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                int valid = 0x112;
+                int valid = 4709;
                 if (dard.ToString().Contains(valid.ToString()))
                 {
-                    while (true)
-                    {
-                        dard += 1;
+                        
                         string result = DecimalToHexadecimal(dard);
                         this.Invoke(new MethodInvoker(delegate ()
                         {
                             tb_v12.Text = result;
                         }));
-                        Thread.Sleep(1000);
-                    }
+                        Thread.Sleep(10);
+                    
                 }
             }
         }
@@ -378,19 +358,17 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                int valid = 0x113;
+                int valid = 4877;
                 if (dard.ToString().Contains(valid.ToString()))
                 {
-                    while (true)
-                    {
-                        dard += 1;
+                        
                         string result = DecimalToHexadecimal(dard);
                         this.Invoke(new MethodInvoker(delegate ()
                         {
                             tb_v13.Text = result;
                         }));
-                        Thread.Sleep(1000);
-                    }
+                        Thread.Sleep(10);
+                    
                 }
             }
         }
@@ -399,19 +377,17 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                int valid = 0x114;
+                int valid = 5046;
                 if (dard.ToString().Contains(valid.ToString()))
                 {
-                    while (true)
-                    {
-                        dard += 1;
+
                         string result = DecimalToHexadecimal(dard);
                         this.Invoke(new MethodInvoker(delegate ()
                         {
                             tb_v14.Text = result;
                         }));
-                        Thread.Sleep(1000);
-                    }
+                        Thread.Sleep(10);
+                    
                 }
             }
         }
@@ -427,7 +403,7 @@ namespace mti_lithiumLogger_2
             while (dec > 0)
             {
                 hex = dec % 16;
-                if (dec != dec % 4096)
+                if (dec != dec % 65536)
                 {
                     if (hex < 10)
                     {

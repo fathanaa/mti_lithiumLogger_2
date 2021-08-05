@@ -33,11 +33,7 @@ namespace mti_lithiumLogger_2
             int dard=0;
             
 
-            Thread thread_arus = new Thread(new ThreadStart(() => arus(dataFromArduino, dard)));
-            thread_arus.Start();
 
-            Thread thread_temp = new Thread(new ThreadStart(() => temp(dataFromArduino, dard)));
-            thread_temp.Start();
 
             Thread thread_v01 = new Thread(new ThreadStart(() => v01(dataFromArduino, dard)));
             thread_v01.Start();
@@ -53,6 +49,12 @@ namespace mti_lithiumLogger_2
 
             Thread thread_v05 = new Thread(new ThreadStart(() => v05(dataFromArduino, dard)));
             thread_v05.Start();
+
+            Thread thread_arus = new Thread(new ThreadStart(() => arus(dataFromArduino, dard)));
+            thread_arus.Start();
+
+            Thread thread_temp = new Thread(new ThreadStart(() => temp(dataFromArduino, dard)));
+            thread_temp.Start();
 
             Thread thread_v06 = new Thread(new ThreadStart(() => v06(dataFromArduino, dard)));
             thread_v06.Start();
@@ -96,7 +98,7 @@ namespace mti_lithiumLogger_2
                         {
                             tb_arus.Text = result;
                         }));
-                        Thread.Sleep(10);
+                        Thread.Sleep(1000);
                     
                 }
             }
@@ -115,7 +117,7 @@ namespace mti_lithiumLogger_2
                         {
                             tb_temp.Text = result;
                         }));
-                        Thread.Sleep(10);
+                        Thread.Sleep(1000);
                     
                 }
             }
@@ -133,7 +135,7 @@ namespace mti_lithiumLogger_2
                         {
                             tb_v01.Text = result;
                         }));
-                        Thread.Sleep(10);
+                        Thread.Sleep(1000);
                     
                 }
             }
@@ -153,7 +155,7 @@ namespace mti_lithiumLogger_2
                         {
                             tb_v02.Text = result;
                         }));
-                        Thread.Sleep(10);
+                        Thread.Sleep(1000);
                     
                 }
             }
@@ -173,7 +175,7 @@ namespace mti_lithiumLogger_2
                         {
                             tb_v03.Text = result;
                         }));
-                        Thread.Sleep(10);
+                        Thread.Sleep(1000);
                     
                 }
             }
@@ -192,7 +194,7 @@ namespace mti_lithiumLogger_2
                         {
                             tb_v04.Text = result;
                         }));
-                        Thread.Sleep(10);
+                        Thread.Sleep(1000);
                     
                 }
             }
@@ -212,7 +214,7 @@ namespace mti_lithiumLogger_2
                         {
                             tb_v05.Text = result;
                         }));
-                        Thread.Sleep(10);
+                        Thread.Sleep(1000);
                     
                 }
             }
@@ -232,7 +234,7 @@ namespace mti_lithiumLogger_2
                         {
                             tb_v06.Text = result;
                         }));
-                        Thread.Sleep(10);
+                        Thread.Sleep(1000);
                     
                 }
             }
@@ -251,7 +253,7 @@ namespace mti_lithiumLogger_2
                         {
                             tb_v07.Text = result;
                         }));
-                        Thread.Sleep(10);
+                        Thread.Sleep(1000);
                     
                 }
             }
@@ -271,7 +273,7 @@ namespace mti_lithiumLogger_2
                         {
                             tb_v08.Text = result;
                         }));
-                        Thread.Sleep(10);
+                        Thread.Sleep(1000);
                     
                 }
             }
@@ -291,7 +293,7 @@ namespace mti_lithiumLogger_2
                         {
                             tb_v09.Text = result;
                         }));
-                        Thread.Sleep(10);
+                        Thread.Sleep(1000);
                     
                 }
             }
@@ -310,7 +312,7 @@ namespace mti_lithiumLogger_2
                         {
                             tb_v10.Text = result;
                         }));
-                        Thread.Sleep(10);
+                        Thread.Sleep(1000);
                     
                 }
             }
@@ -329,7 +331,7 @@ namespace mti_lithiumLogger_2
                         {
                             tb_v11.Text = result;
                         }));
-                        Thread.Sleep(10);
+                        Thread.Sleep(1000);
                     
                 }
             }
@@ -348,7 +350,7 @@ namespace mti_lithiumLogger_2
                         {
                             tb_v12.Text = result;
                         }));
-                        Thread.Sleep(10);
+                        Thread.Sleep(1000);
                     
                 }
             }
@@ -367,7 +369,7 @@ namespace mti_lithiumLogger_2
                         {
                             tb_v13.Text = result;
                         }));
-                        Thread.Sleep(10);
+                        Thread.Sleep(1000);
                     
                 }
             }
@@ -386,7 +388,7 @@ namespace mti_lithiumLogger_2
                         {
                             tb_v14.Text = result;
                         }));
-                        Thread.Sleep(10);
+                        Thread.Sleep(1000);
                     
                 }
             }
@@ -404,32 +406,6 @@ namespace mti_lithiumLogger_2
             {
                 hex = dec % 16;
                 if (dec != dec % 65536)
-                {
-                    if (hex < 10)
-                    {
-                        hexStr = hexStr.Insert(0, Convert.ToChar(hex + 48).ToString());
-                    }
-                    else
-                    {
-                        hexStr = hexStr.Insert(0, Convert.ToChar(hex + 55).ToString());
-                    }
-                }
-                dec /= 16;
-            }
-            return hexStr;
-        }
-
-        public static string identifyID(int dec)
-        {
-            if (dec < 1) return "0";
-
-            int hex = dec;
-            string hexStr = string.Empty;
-
-            while (dec > 0)
-            {
-                hex = dec % 16;
-                if (dec == dec % 4096)
                 {
                     if (hex < 10)
                     {

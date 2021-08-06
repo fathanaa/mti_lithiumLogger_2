@@ -16,7 +16,7 @@ namespace mti_lithiumLogger_2
             InitializeComponent();
 
             serialPort = new SerialPort();
-            serialPort.PortName = "COM4";
+            serialPort.PortName = "COM3";
             serialPort.BaudRate = 9600;
             serialPort.DtrEnable = true;
             serialPort.Open();
@@ -31,10 +31,9 @@ namespace mti_lithiumLogger_2
         {
             String dataFromArduino = serialPort.ReadLine();
             int dard=0;
-            
 
 
-
+          
             Thread thread_v01 = new Thread(new ThreadStart(() => v01(dataFromArduino, dard)));
             thread_v01.Start();
 
@@ -94,6 +93,7 @@ namespace mti_lithiumLogger_2
                 if (dataFromArduino.Contains(valid.ToString()))
                 {
                         string result = DecimalToHexadecimal(dard);
+                        
                         this.Invoke(new MethodInvoker(delegate ()
                         {
                             tb_arus.Text = result;
@@ -145,19 +145,16 @@ namespace mti_lithiumLogger_2
         {
             if (int.TryParse(dataFromArduino, out dard))
             {
-                int valid = 3021;
-                if (dard.ToString().Contains(valid.ToString()))
-                {
+                int v_valid = 3021;
+                bool valid = dard.ToString().Contains(v_valid.ToString());
 
-                        
-                        string result = DecimalToHexadecimal(dard);
-                        this.Invoke(new MethodInvoker(delegate ()
-                        {
-                            tb_v02.Text = result;
-                        }));
-                        Thread.Sleep(1000);
-                    
-                }
+                while (valid)
+                {
+                    string result = DecimalToHexadecimal(dard);
+
+                    tb_v02.Text = result;
+
+                }          
             }
         }
 
